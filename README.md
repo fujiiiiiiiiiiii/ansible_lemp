@@ -7,8 +7,9 @@
 - PHP 7.1
 
 ## 必要ツール
-- VirtualBox 5.0以上
-- Vagrant 1.7以上
+- VirtualBox 5.0
+- Vagrant 1.8
+(当方上記バージョンにて確認)
 
 ## 開発ディレクトリ
 デフォルトのドキュメントルートは`repository/your-app/public/`になっています。  
