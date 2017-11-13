@@ -1,0 +1,15 @@
+[remi]
+name=Remi's RPM repository for Enterprise Linux 7 - $basearch
+baseurl=http://rpms.remirepo.net/enterprise/7/remi/$basearch/
+mirrorlist=http://rpms.remirepo.net/enterprise/7/remi/mirror
+enabled=0
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-remi
+
+[remi-php71]
+name=Remi’s PHP 7.1 RPM repository for Enterprise Linux 7 - $basearch
+#baseurl=http://rpms.remirepo.net/enterprise/7/php71/$basearch/
+mirrorlist=http://rpms.remirepo.net/enterprise/7/php71/mirror
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-remi

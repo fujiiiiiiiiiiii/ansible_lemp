@@ -1,0 +1,12 @@
+---
+- name: Start
+  hosts: lemp
+  become: true
+  roles:
+    - common
+    - nginx
+    - php-fpm
+    - phpmyadmin
+    - mysql
+    # 以下app
+    # - app/your-app

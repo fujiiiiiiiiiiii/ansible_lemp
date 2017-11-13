@@ -1,0 +1,37 @@
+env: vagrant
+
+# default
+server:
+  default_docroot: /vagrant/repository/your-app/public
+
+# nginx
+nginx:
+  user: vagrant
+  group: vagrant
+  sendfile: 'off'
+
+# mysql
+mysql:
+  package: http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
+  service: mysqld
+  conf_file: /etc/my.cnf
+  password_root: vagrant
+
+# php-fpm
+php_fpm:
+  user: vagrant
+  group: vagrant
+  listen_owner: vagrant
+  listen_group: vagrant
+  sock_path: /var/run/php-fpm/nginx.sock
+
+# phpMyAdmin
+phpmyadmin:
+  url: https://files.phpmyadmin.net/phpMyAdmin/4.6.5.2/phpMyAdmin-4.6.5.2-all-languages.tar.gz
+  package_filename: phpMyAdmin-4.6.5.2-all-languages
+  work_dir: /usr/local/src
+  deploy_dir: /var/www/
+  home_dir: /var/www/phpMyAdmin
+  config_changes:
+    - regexp: "^(.*blowfish_secret.*) = .*"
+      line: "\\1 = 'passphrase';"

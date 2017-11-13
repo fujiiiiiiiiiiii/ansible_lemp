@@ -1,0 +1,58 @@
+- name: debug
+  debug:
+    var: env
+
+- name: version
+  shell: "git --version"
+  register: version
+
+- name: debug version hhhh
+  debug:
+    var: version
+  when: version.stdout | match("^git version 1")
+
+
+- name: version hoge
+  shell: "hoge --version"
+  register: version2
+
+- name: debug version2
+  debug:
+    var: version2
+
+- name: debug Is mysql already installed
+  shell: "which mysql"
+  register: is_mysql
+  ignore_errors: yes
+
+- name: debug mysql
+  debug:
+    var: is_mysql
+
+- name: debug2
+  debug:
+    var: nginx.sendfile
+
+- name: debug3
+  debug:
+    var: nginx.hoge
+
+- name: debug4
+  debug:
+    var: server.hostname
+
+- name: debug5
+  debug:
+    var: php_fpm.listen_group
+
+- name: debug6
+  debug:
+    var: php_fpm.sock_path
+
+- name: debug7
+  debug:
+    var: gomi.hoge
+
+- name: debug8
+  debug:
+    var: gomi.fuga

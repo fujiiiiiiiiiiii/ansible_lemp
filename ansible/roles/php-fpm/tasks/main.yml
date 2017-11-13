@@ -1,0 +1,47 @@
+---
+- name: Is php-fpm already installed
+  shell: "which php"
+  register: is_php
+  ignore_errors: yes
+
+- name: Install php
+  yum:
+    name={{ item }}
+    enablerepo=remi,remi-php71
+    state=present
+  with_items:
+    - php
+    - php-common
+    - php-mbstring
+    - php-fpm
+    - php-gd
+    - php-xml
+    - php-pdo
+    - php-zip
+    - php-cli
+    - php-mcrypt
+    - php-memcache
+    - php-mysqli
+    - php-mysqlnd
+    - php-pecl-redis
+  when: is_php.rc == 1
+
+- name: Copy php-fpm conf
+  template:
+    src=www.conf
+    dest=/etc/php-fpm.d/
+  notify: restart php-fpm
+
+- name: Delete unnecessary folders
+  file:
+    path={{ item }}
+    state=absent
+  with_items:
+    - /var/www/html
+    - /var/www/cgi-bin
+
+- name: Start php-fpm
+  service:
+    name=php-fpm
+    state=started
+    enabled=yes

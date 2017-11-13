@@ -1,0 +1,6 @@
+[lemp]
+localhost
+
+# [hoge:children]とするとgroup_vars/hogeを読み込む
+[local:children]
+lemp
