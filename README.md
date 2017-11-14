@@ -13,7 +13,8 @@
 
 ## 開発ディレクトリ
 デフォルトのドキュメントルートは`repository/your-app/public/`になっています。  
-もし変更が必要であれば`ansible/group_vars/local`ファイルの`default_docroot`を修正してください。
+もし変更が必要であれば`ansible/group_vars/local`ファイルの`default_docroot`を修正し`vagrant up`を実行してください。  
+一度`vagrant up`をした後に修正した場合は、`vagrant provision`を実行してください。
 
 ## 利用方法
 cloneした`Vagrantfile`があるディレクトリで`vagrant up`コマンドを実行してください。  
