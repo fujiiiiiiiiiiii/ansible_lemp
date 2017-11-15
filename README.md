@@ -9,7 +9,9 @@
 ## 必要ツール
 - VirtualBox 5.0
 - Vagrant 1.8
-(当方上記バージョンにて確認)
+(当方上記バージョンにて確認)　
+vagrantの使い方は他サイト参照してくだい。  
+ansibleがインストールされたboxを利用していますのでansibleの知識は不要です。  
 
 ## 開発ディレクトリ
 デフォルトのドキュメントルートは`repository/your-app/public/`になっています。  
@@ -22,3 +24,7 @@ cloneした`Vagrantfile`があるディレクトリで`vagrant up`コマンド�
 ## URL
 - アプリ：[http://192.168.111.222](http://192.168.111.222)
 - phpMyAdmin：[http://192.168.111.222:8080](http://192.168.111.222:8080) (id/pw root/vagrant)
+
+## ログ
+- PHPエラー：/var/log/php-fpm/php-error.log
+- スローPHP = /var/log/php-fpm/php-slow.log
